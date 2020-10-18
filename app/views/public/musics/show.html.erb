@@ -1,0 +1,10 @@
+
+
+<div class="pull-left">
+	<%= attachment_image_tag @music, :image, size:'300x300',format: 'jpeg' %>
+</div>
+<div>
+	<%= @music.name %>
+	<%= @music.band.name %>
+	<%= @music.introduction %>
+</div>

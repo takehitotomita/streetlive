@@ -1,0 +1,10 @@
+<h1>本当に退会しますか？</h1>
+<p>退会すると、会員情報や<br>
+   音楽の投稿ができなくなります。<br>
+   退会する場合は、「退会する」をクリックしてくだいさい。</p>
+
+
+<%#= form_with model: @customer, url:public_customers_withdraw_path,local: true do |f| %>
+	<%#= link_to "退会しない", public_customer_path(@customer_id.id) %>
+	<%#= f.submit '退会する' %>
+<%# end %>

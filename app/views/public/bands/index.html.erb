@@ -1,0 +1,28 @@
+<h1>作品一覧</h1>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<!-- <th>曲名</th> -->
+			<th>バンド名</th>
+			<th>作成日時</th>
+	    </tr>
+    </thead>
+    <tbody>
+       <% @bands.each do |bands| %>
+		 	<tr>
+		 		<td> <!-- 実行しない可能性あり -->
+		 			<%#= band.music.name %>
+		 		</td>
+		 		<td>
+		 			<%= link_to bands.name, public_band_path(band) %>
+		 		</td>
+		 		<td>
+		 			<%= bands.created_at %>
+		 		</td>
+		 	</tr>
+	  <% end %>
+    </tbody>
+ </table>

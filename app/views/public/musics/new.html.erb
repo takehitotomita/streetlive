@@ -1,0 +1,12 @@
+<h1>新規投稿</h1>
+<%= form_with model: @music, url: public_musics_path, method: :post,local: true do |f| %>
+	<h4>画像</h4>
+	<%= f.file_field :img_id %>
+	<h4>曲名</h4>
+    <%= f.text_field :name %>
+    <h4>曲のアップロード</h4>
+    <%= f.file_field :file %>
+    <h4>曲の説明</h4>
+  	<%= f.text_area :introduction %>
+  	<%= f.submit '新規登録', class: "btn btn-primary col-xs-12" %>
+ <% end %>
