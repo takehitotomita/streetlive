@@ -1,3 +1,10 @@
+<% if flash[:alert] %>        
+	 <p class="alert">
+	 	<%= flash[:alert] %>	
+	 </p>     
+<%end%> 
+
+
 <h1>新規投稿</h1>
 <%= form_with model: @music, url: public_musics_path, method: :post,local: true do |f| %>
 	<h4>画像</h4>

@@ -1,6 +1,6 @@
 class Public::BandsController < ApplicationController
   def index
-    @bands = Band.all
+    @bands = Band.page(params[:page]).reverse_order
   end
 
   def show

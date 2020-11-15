@@ -1,10 +1,32 @@
 
+<div class="row">
+	<div class="col-xs-6">
+		<%= image_tag @music.img_id.to_s, size:'300x300',format: 'jpeg' %>
+		<%= audio_tag @music.file_url, controls: true %>
+	</div>
+	<div class="col-xs-6">
+		<!-- タブ・メニュー -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#music" data-toggle="tab">曲名</a></li>
+			<li><a href="#band" data-toggle="tab">制作バンド</a></li>
+			<li><a href="#description" data-toggle="tab">説明</a></li>
+		</ul>
 
-<div class="pull-left">
-	<%= attachment_image_tag @music, :image, size:'300x300',format: 'jpeg' %>
-</div>
-<div>
-	<%= @music.name %>
-	<%= @music.band.name %>
-	<%= @music.introduction %>
+		<!-- タブ内容 -->
+		<div class="tab-content">
+			<div class="tab-pane active" id="music">
+				<p><%= @music.name %></p>
+			</div>
+			<div class="tab-pane" id="band">
+				<p><%= @band.name %></p>
+			</div>
+			<div class="tab-pane" id="description">
+				<p><%= @music.introduction %></p>
+			</div>
+		</div>
+		
+	</div>
+	<% if @band.user_id == current_user&.id %>
+		<%= link_to '削除する', public_music_path(current_user.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete %>
+	<% end %>
 </div>

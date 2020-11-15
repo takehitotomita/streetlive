@@ -1,7 +1,7 @@
-<h1>会員情報</h1>
+<h2>会員情報</h2>
 <h3>登録情報</h3>
-<%= link_to "編集する", edit_public_user_path,class: "btn btn-primary" %>
-<%= link_to "パスワードを変更する", edit_user_password_path,class: "btn btn-primary" %>
+<%= link_to "編集する", edit_public_user_path, class: "btn-square-shadow" %>
+<%= link_to "パスワードを変更する", edit_user_password_path, class: "btn-square-shadow" %>
 <table class="table">
 		<tr>
 			<th>氏名</th>
@@ -25,9 +25,9 @@
 		</tr>
 		<tr>
 			<th>所属バンド</th>
-			<td><%= @user.bands %></td>
+			<td><%= @user.band.name %></td>
 		</tr>
 </table>
 
 
-<%= link_to "退会する", public_users_unsubscribe_path,class: "btn btn-primary" %>
+<%= link_to "退会する", unsubscribe_public_users_path, class: "btn-flat-horizontal-border" %>

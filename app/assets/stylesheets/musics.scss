@@ -1,3 +1,66 @@
-// Place all the styles related to the musics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.col-lg-8 {
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    border: 5px solid yellow;
+}
+
+.box1 {
+	width: 50%;
+    height: 50px;
+    padding: 5px;
+}
+
+.wrap{
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.clearfix:after{
+  content:"";
+  clear: both;
+  display: block;
+}
+
+#tab-menu li {
+  float: left;
+  list-style-type: none;
+  width: 25%;
+}
+
+#tab-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  text-align: center;
+  background: #000;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+#tab-menu .active {
+  background: #fff;
+  color: #000;
+}
+
+#tab-contents .tabs {
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #000;
+  border-top: none;
+}
+
+#tab-contents p{
+  color:#000;
+  line-height: 2.5;
+}
+
+#footer{
+	width: 100%; 
+  height: 100px; 
+  background-color: orange; 
+  position: fixed;
+  bottom: 0;
+}

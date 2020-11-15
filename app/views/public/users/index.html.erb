@@ -1,5 +1,5 @@
-<h1>マイページ</h1>
-<p>Find me in app/views/public/users/index.html.erb</p>
+<h2>マイページ</h2>
+<%= link_to '新規投稿する', new_public_music_path, class: "btn-square-shadow" %>
 
 <h3>投稿した曲</h3>
 <table class="table">
@@ -10,16 +10,17 @@
 	    </tr>
     </thead>
     <tbody>
-       <% @users.each do |users| %>
+       <% @musics.each do |music| %>
 		 	<tr>
 		 		<td>
-		 			<%= link_to user.band.music.name, public_music_path(music.id) %>
+		 			<%= link_to music.name, public_music_path(music) %>
 		 		</td>
 		 		<td>
-		 			<%= bands.created_at %>
+		 			<%= music.created_at %>
 		 		</td>
 		 	</tr>
 	  <% end %>
     </tbody>
  </table>
- <%= link_to "編集ページへ" edit_public_user(current_user.id) %>
+ <%= link_to '編集ページへ', edit_public_user_path(current_user.id), class: "btn-square-shadow" %><br>
+ <%= link_to '会員情報を確認する', public_user_path(current_user.id), class: "btn-square-shadow" %>

@@ -1,0 +1,31 @@
+<p>検索</p>
+<%= form_tag(public_musics_search_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+
+<h1>曲名一覧</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>音楽</th>
+			<th>作成日時</th>
+			<th></th>
+	    </tr>
+    </thead>
+    <tbody>
+       <% @musics.each do |music| %>
+		 	<tr>
+		 		<td>
+		 			<%= link_to music.name, admin_music_path(music) %>
+		 		</td>
+		 		<td>
+		 			<%= music.created_at %>
+		 		</td>
+		 		<td><%= link_to "削除する", admin_music_path(music.id), method: :delete %>
+		 		</td>
+		 	</tr>
+	  <% end %>
+    </tbody>
+ </table>

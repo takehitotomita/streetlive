@@ -1,0 +1,21 @@
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>曲名</th>
+			<th>作成日時</th>
+	    </tr>
+    </thead>
+    <tbody>
+       <% @bands.musics.each do |bands| %>
+		 	<tr>
+		 		<td> 
+		 			<%= bands.name %>
+		 		</td>
+		 		<td>
+		 			<%= bands.created_at %>
+		 		</td>
+		 	</tr>
+	  <% end %>
+    </tbody>
+ </table>

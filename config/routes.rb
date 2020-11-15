@@ -1,12 +1,27 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    resources :users
+    resources :musics
+    get 'tops/top'
+  end
   
   namespace :public do
     resources :bands
+    get 'musics/search'
     resources :musics
-    resources :users
-    get 'users/unsubscribe'
+    resources :users do
+      collection do
+        get 'unsubscribe' # public/users/unsubscribe
+      end
+    #   member do
+    #     get 'musics'  # public/user/:id/musics__
+    #   end
+     end
+
+    #get 'users/unsubscribe' => "public/users#unsubscribe"
     post 'users/withdraw'
-    root to: 'top#top'
+    root to: 'tops#top'
   end
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',

@@ -1,0 +1,46 @@
+<% if flash[:notice] %>        
+	 <p class="notice">
+	 	<%= flash[:notice] %>	
+	 </p>     
+<%end%> 
+
+
+<div class="box23">
+	<p>あなたの音楽が時間と場所を超えてファンに届く！！<br>
+	   あなたの作った曲を投稿しよう。
+	</p>
+</div>
+
+<h3 class="ribbon1">new song</h3>
+<table class="table">
+	    <% @musics.each do |music| %>
+	    	<thead>
+			    <tr>
+		    		<th>
+		    		</th>
+					<th>バンド名
+					</th>
+					<th>曲名
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<%= image_tag music.img_id.to_s, size:'300x300',format: 'jpeg' %>
+					</td>
+					<td>
+						<%= music.band.name %>
+					</td>
+					<td>
+						<%= link_to music.name, public_music_path(music) %>
+					</td>
+				<tr>
+			</tbody>
+		<% end %>
+</table>
+<span id="back">
+      <a href="#">topへ</a>
+</span>
+
+						

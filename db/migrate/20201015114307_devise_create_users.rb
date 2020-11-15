@@ -11,7 +11,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :postal_code, null:false
       t.string :address, null:false
       t.string :telephone_number, null:false
-      t.string :band
       t.boolean :deleted_at, default: false, null:false
       ## Recoverable
       t.string   :reset_password_token

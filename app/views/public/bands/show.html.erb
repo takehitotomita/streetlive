@@ -1,23 +1,26 @@
-<h1>band.nameさんの音楽/h1>
+<h1>
+	<%= @band.name %>さんの音楽
+</h1>
 
-
-<table class="table">
-	<thead>
-		<tr>
-			<th>曲名</th>
-			<th>作成日時</th>
-	    </tr>
-    </thead>
-    <tbody>
-       <% @bands.each do |bands| %>
-		 	<tr>
-		 		<td> 
-		 			<%= bands.musics.name %>
-		 		</td>
-		 		<td>
-		 			<%= bands.musics.created_at %>
-		 		</td>
-		 	</tr>
-	  <% end %>
-    </tbody>
- </table>
+<div class="row">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>曲名</th>
+				<th>作成日時</th>
+		    </tr>
+	    </thead>
+	    <tbody>
+	       <% @band.musics.each do |music| %>
+			 	<tr>
+			 		<td> 
+			 			<%= link_to music.name, public_music_path(music) %>
+			 		</td>
+			 		<td>
+			 			<%= music.created_at %>
+			 		</td>
+			 	</tr>
+		  <% end %>
+	    </tbody>
+	 </table>
+</div>

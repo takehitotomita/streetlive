@@ -1,9 +1,15 @@
 class Public::MusicsController < ApplicationController
   def index
+    @musics = Music.page(params[:page]).reverse_order
+  end
+
+  def search
+    @musics = Music.search(params[:search])
   end
 
   def show
     @music = Music.find(params[:id])
+    @band = Band.find(@music.band_id)
   end
 
   def new
@@ -12,12 +18,20 @@ class Public::MusicsController < ApplicationController
 
   def create
     music = Music.new(music_params)
-    music.save
-    redirect_to public_music(params[:id])
+    music.band = current_user.band
+  if music.save
+     redirect_to public_music_path(music.id)
+  else
+     flash.now[:alert] = "入力漏れがありました。再度入力お願いいたします。"
+     render :new
+    end
   end
 
   def edit
     @music = Music.find(params[:id])
+    unless music.band == current_user.band
+      redirect_to public_music_path(@music.id)
+    end
   end
 
   def update
@@ -27,6 +41,9 @@ class Public::MusicsController < ApplicationController
   end
 
   def destroy
+    current_user.music = MUsic.where(music_id: current_user.music_id)
+    current_user.music.destroy
+    redirect_to public_musics_path
   end
 
   private

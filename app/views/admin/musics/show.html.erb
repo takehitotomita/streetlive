@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="pull-left">
+		<%= image_tag @music.img_id.to_s, size:'300x300',format: 'jpeg' %>
+	</div>
+	<div class="col-lg-8">
+		<%= audio_tag @music.file_url, controls: true %>
+		<div class = "box1">曲名
+			<%= @music.name %>
+		</div>
+		<div class = "box1">バンド名
+			<%= @music.band.name %>
+		</div>
+		<div class = "box1">曲の説明
+			<%= @music.introduction %>
+		</div>
+		<%= link_to '削除する', public_music_path(@music.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete %>
+	</div>
+</div>

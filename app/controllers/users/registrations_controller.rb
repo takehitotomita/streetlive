@@ -59,4 +59,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  def new
+    @user = User.new
+    @user.build_band
+  end
+
+  def create
+    super
+    user = User.new(configure_sign_up_params)
+    user.save
+  end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name, :postal_code, :address, :telephone_number, band_attributes: [:name]])
+  end
 end

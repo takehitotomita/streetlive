@@ -4,7 +4,6 @@
    退会する場合は、「退会する」をクリックしてくだいさい。</p>
 
 
-<%#= form_with model: @customer, url:public_customers_withdraw_path,local: true do |f| %>
-	<%#= link_to "退会しない", public_customer_path(@customer_id.id) %>
-	<%#= f.submit '退会する' %>
-<%# end %>
+
+	<%= link_to "退会しない", public_users_path %>
+	<%= link_to '退会する', public_user_path(current_user.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete %>
