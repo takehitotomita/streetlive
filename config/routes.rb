@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get 'tops/top'
   end
   
-  root to: 'tops#top'
+  root to: 'public/tops#top'
 
   namespace :public do
     resources :bands

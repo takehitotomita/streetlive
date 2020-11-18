@@ -35,7 +35,7 @@ class Public::UsersController < ApplicationController
     user = current_user
     user.destroy
     reset_session
-    redirect_to public_root_path, notice: "ありがとうございました。またのご利用を心よりお待ちしております。"
+    redirect_to root_path, notice: "ありがとうございました。またのご利用を心よりお待ちしております。"
   end
   private
   def user_params
