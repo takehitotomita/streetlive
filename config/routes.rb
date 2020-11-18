@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get 'tops/top'
   end
   
+  root to: 'tops#top'
+
   namespace :public do
     resources :bands
     get 'musics/search'
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
 
     #get 'users/unsubscribe' => "public/users#unsubscribe"
     post 'users/withdraw'
-    root to: 'tops#top'
+
   end
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
