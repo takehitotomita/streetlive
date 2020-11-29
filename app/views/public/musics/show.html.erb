@@ -26,7 +26,11 @@
 		</div>
 		
 	</div>
-	<% if @band.user_id == current_user&.id %>
-		<%= link_to '削除する', public_music_path(current_user.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete %>
-	<% end %>
+	<%# if @band.user_id == current_user&.id %>
+		<%#= link_to '削除する', public_music_path(current_user.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete %>
+	<%# end %>
+
+	<div class="btn">
+		<%= link_to '削除する', public_music_path(current_user.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete if @band.user_id == current_user&.id %>
+	</div>
 </div>

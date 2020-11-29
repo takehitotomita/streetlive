@@ -19,11 +19,11 @@ class Public::MusicsController < ApplicationController
   def create
     music = Music.new(music_params)
     music.band = current_user.band
-  if music.save
-     redirect_to public_music_path(music.id)
-  else
-     flash.now[:alert] = "入力漏れがありました。再度入力お願いいたします。"
-     render :new
+    if music.save
+       redirect_to public_music_path(music.id)
+    else
+       flash.now[:alert] = "入力漏れがありました。再度入力お願いいたします。"
+       render :new
     end
   end
 
