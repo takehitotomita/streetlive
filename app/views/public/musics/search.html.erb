@@ -1,8 +1,20 @@
-<ul>
-   <% @musics.each do |music| %>
-	  <li>
-	    <%= music.name %>
-	    <%#= music.status %>
-	  </li>
-   <% end %>
-</ul>
+<table class="table">
+	<thead>
+		<tr>
+			<th>音楽</th>
+			<th>作成日時</th>
+	    </tr>
+    </thead>
+    <tbody>
+       <% @musics.each do |music| %>
+		 	<tr>
+		 		<td>
+		 			<%= link_to music.name, public_music_path(music) %>
+		 		</td>
+		 		<td>
+		 			<%= music.created_at %>
+		 		</td>
+		 	</tr>
+	  <% end %>
+    </tbody>
+ </table>

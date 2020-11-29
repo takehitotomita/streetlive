@@ -5,7 +5,7 @@
 <%end%> 
 
 
-<div class="box23">
+<div class="box8">
 	<p>あなたの音楽が時間と場所を超えてファンに届く！！<br>
 	   あなたの作った曲を投稿しよう。
 	</p>
@@ -16,7 +16,7 @@
 	    <% @musics.each do |music| %>
 	    	<thead>
 			    <tr>
-		    		<th>
+		    		<th>イメージ画像
 		    		</th>
 					<th>バンド名
 					</th>
@@ -27,7 +27,7 @@
 			<tbody>
 				<tr>
 					<td>
-						<%= image_tag music.img_id.to_s, size:'300x300',format: 'jpeg' %>
+						<%= image_tag music.img_id.to_s, size:'150x150',format: 'jpeg' %>
 					</td>
 					<td>
 						<%= music.band.name %>
