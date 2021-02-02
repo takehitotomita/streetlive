@@ -3,7 +3,7 @@
     height: 300px;
     padding: 30px;
     border: 5px solid yellow;
-}
+} 
 
 .box1 {
 	width: 50%;
@@ -99,4 +99,8 @@
   transform: translateY(2px);/*沈むように*/
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
+}
+
+.table top{
+  width: 100%;
 }
