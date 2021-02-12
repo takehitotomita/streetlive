@@ -41,8 +41,8 @@ class Public::MusicsController < ApplicationController
   end
 
   def destroy
-    current_user.music = MUsic.where(music_id: current_user.music_id)
-    current_user.music.destroy
+    music = current_user.band.musics.find(params[:id])
+    music.destroy
     redirect_to public_musics_path
   end
 
