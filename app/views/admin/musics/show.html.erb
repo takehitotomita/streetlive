@@ -13,6 +13,6 @@
 		<div class = "box1">曲の説明
 			<%= @music.introduction %>
 		</div>
-		<%= link_to '削除する', public_music_path(@music.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete %>
+		<%= link_to '削除する', admin_music_path(@music.id), class: "btn-sm btn-danger destroy_book_36682",method: :delete %>
 	</div>
 </div>
